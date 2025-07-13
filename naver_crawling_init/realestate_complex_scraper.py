@@ -6,17 +6,11 @@ from datetime import datetime
 
 #  최신 인증 정보
 headers = {
-    "user-agent": "비공개",
-    "authorization": "비공개",
-    "referer": "비공개",
-    # "...이하 비공개
+    #  비공개
 }
 
 cookies = {
-    "NNB": "비공개",
-    "NaverSuggestUse": "비공개"
-    # "...이하 비공개
-
+   #  비공개
 }
 
 def get_complex_list_by_dong(city='서울특별시', district='마포구'):
