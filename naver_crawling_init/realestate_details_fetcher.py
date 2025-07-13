@@ -8,17 +8,11 @@ import glob
 
 #  최신 인증 정보
 HEADERS = {
-    "user-agent": "비공개",
-    "authorization": "비공개",
-    "referer": "비공개",
-    # "...이하 비공개
+     #  비공개
 }
 
 COOKIES = {
-    "NNB": "비공개",
-    "NaverSuggestUse": "비공개"
-    # "...이하 비공개
-
+    #  비공개
 }
 
 def get_complex_info(complex_no, session, max_retries=3):
