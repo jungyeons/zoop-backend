@@ -1,4 +1,6 @@
 #  Naver Real Estate Crawler System
+"**비공식 API 사용 / 학습 목적 / 비상업용**
+
 
 네이버 부동산 API를 활용하여 단지 정보, 매물 정보, 공인중개사 정보를 수집하고 통합 데이터셋을 생성하는 **크롤링 시스템**입니다.
 이후 fastapi_service에서 my_secret폴더로 이동됨
@@ -29,14 +31,14 @@
 
 ####  단지 목록 수집
 
-- 지역 코드(`cortarNo`)를 기반으로 단지 정보 조회  
-- `complex_list_{city}_{district}_{timestamp}.json` 형태로 저장
+- 지역 코드(`***`)를 기반으로 단지 정보 조회  
+- `json` 형태로 저장
 
 ####  매물 정보 수집
 
 - 단지 번호 기준 매물 조회
 - 페이지 단위로 반복 수집
-- `naver_land_structured_*.json`, `naver_land_flattened_*.json` 으로 저장
+- `json` 으로 저장
 
 ####  공인중개사 정보 수집
 
@@ -50,7 +52,7 @@
 
 | 항목      | 설명 |
 |-----------|------|
-| 엔드포인트 | `/api/regions/complexes` |
+| 엔드포인트 | `비공개` |
 | 메서드     | `GET` |
 | 파라미터   | `cortarNo`, `realEstateType=APT`, `order=rank` |
 | 응답      | 단지 목록 리스트 |
@@ -61,7 +63,7 @@
 
 | 항목      | 설명 |
 |-----------|------|
-| 엔드포인트 | `/api/articles/complex/{complex_no}` |
+| 엔드포인트 | `비공개` |
 | 메서드     | `GET` |
 | 파라미터   | `complexNo`, `realEstateType=APT`, `tradeType=A1`, `page`, `type=list`, `order=rank` |
 | 응답      | 매물 목록 리스트 |
@@ -72,7 +74,7 @@
 
 | 항목      | 설명 |
 |-----------|------|
-| 엔드포인트 | `/api/articles/{article_no}` |
+| 엔드포인트 | `비공개` |
 | 메서드     | `GET` |
 | 파라미터   | `articleNo`, `complexNo` |
 | 응답      | 매물 상세 JSON |
@@ -83,7 +85,7 @@
 
 | 항목      | 설명 |
 |-----------|------|
-| 엔드포인트 | `/api/complexes/{complex_no}` |
+| 엔드포인트 | `비공개` |
 | 메서드     | `GET` |
 | 파라미터   | `complexNo` |
 | 응답      | 단지 상세 정보 |
