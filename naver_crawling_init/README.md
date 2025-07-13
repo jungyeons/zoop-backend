@@ -110,7 +110,7 @@
   }
 }
 ```
-
+---
 
 ### 4.2 매물 상세 정보
 ```json
@@ -128,40 +128,51 @@
   ]
 }
 ```
+---
 
 ### 5. 사용 방법
-#### 5-1. 실행 명령어 
-python realestate_complex_scraper.py
-python realestate_details_fetcher.py
 
+
+#### 5-1. 실행 명령어 
+- python realestate_complex_scraper.py
+- python realestate_details_fetcher.py
+
+---
 
 #### 5-2. 주요 설정
-지역 설정: city, district 변수 수정
+- 지역 설정: city, district 변수 수정
+- 수집 제한: max_pages 설정 가능
+- 딜레이 설정: time.sleep() 조절
 
-수집 제한: max_pages 설정 가능
-
-딜레이 설정: time.sleep() 조절
-
+---
 #### 5-3. 출력 파일
-complex_list_*.json	단지 목록
-naver_land_structured_*.json	구조화된 매물 정보
-naver_land_flattened_*.json	평탄화된 매물 리스트
-
+- complex_list_*.json	단지 목록
+- naver_land_structured_*.json	구조화된 매물 정보
+- naver_land_flattened_*.json	평탄화된 매물 리스트
+  
+---
 
 ### 6. 주의 사항
+
 #### 6-1. API 딜레이 설정 
-time.sleep(random.uniform(0.17, 0.33))  # 단지별
-time.sleep(random.uniform(0.02, 0.04))  # 페이지별
-time.sleep(random.uniform(3, 5))        # 인증 API
+- time.sleep(random.uniform(0.17, 0.33))  # 단지별
+- time.sleep(random.uniform(0.02, 0.04))  # 페이지별
+- time.sleep(random.uniform(3, 5))        # 인증 API
+ 
+---
 
-
+ 
 #### 6-2. 인증 정보 관리
-HEADERS: Authorization, User-Agent 포함
-COOKIES: NID_AUT, NNB 등 포함
-갱신 필요 시, 브라우저 F12 → 네트워크 탭 → 값 추출
+- HEADERS: Authorization, User-Agent 포함
+- COOKIES: NID_AUT, NNB 등 포함
+- 갱신 필요 시, 브라우저 F12 → 네트워크 탭 → 값 추출
+
+---
+
 
 
 #### 6-3. 재시도 및 에러 처리
+```json
 retry_count = 0
 while retry_count < max_retries:
     try:
@@ -169,28 +180,42 @@ while retry_count < max_retries:
     except:
         retry_count += 1
         time.sleep(2)
+```
+
+
+---
 
 #### 6-4. 백업 및 파일 저장
 파일명에 timestamp 포함
 단지별, 전체 결과 JSON 저장
+
+
+---
+
 
 ### 7. 에러 처리 전략
 #### 7-1. API 실패 시 재시도
 최대 3회 재시도
 상태코드 확인 (401, 403, 500 등)
 
+
+---
+
+
 #### 7-2. 인증 만료 시 안내
  인증 실패: 세션 만료
  브라우저 로그인 후 F12 → 쿠키/토큰 복사 필요
 
+
+---
+
+
 #### 7-3. 데이터 유효성 검증
-필수 필드 누락 여부 확인
+- 필수 필드 누락 여부 확인
+- 데이터 타입 일치 여부 확인
+- 중복 체크 및 범위 체크 수행
 
-데이터 타입 일치 여부 확인
-
-중복 체크 및 범위 체크 수행
-
-
+---
 
 ### 스크린샷
 
