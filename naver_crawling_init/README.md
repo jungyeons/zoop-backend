@@ -1,4 +1,4 @@
-#  Naver Real Estate Crawler System
+# Real Estate Crawler System
 "**비공식 API 사용 / 학습 목적 / 비상업용**
 
 
