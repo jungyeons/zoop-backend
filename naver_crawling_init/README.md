@@ -173,13 +173,15 @@
 
 #### 6-3. 재시도 및 에러 처리
 ```json
-retry_count = 0
-while retry_count < max_retries:
-    try:
-        # 요청
-    except:
-        retry_count += 1
-        time.sleep(2)
+{
+  retry_count = 0
+  while retry_count < max_retries:
+      try:
+          # 요청
+      except:
+          retry_count += 1
+          time.sleep(2)
+}
 ```
 
 
