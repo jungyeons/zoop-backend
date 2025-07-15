@@ -1,15 +1,4 @@
 {
-    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
-    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlJFQUxFU1RBVEUiLCJpYXQiOjE3NDc5MDQ3MDEsImV4cCI6MTc0NzkxNTUwMX0.Of2WIaMu-Ogb_SPNUh7r1DGhEsbPyEYeTJbU2Ityq-M",
-    "referer": "https://new.land.naver.com/complexes?ms=0,0,0&a=APT:ABYG:JGC:PRE&b=A1:B1:B2&e=RETAIL&f=5000&articleNo=2527429055",
-    "accept": "*/*",
-    "accept-language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
-    "sec-ch-ua": "'Chromium';v='136', 'Google Chrome';v='136', 'Not.A/Brand';v='99'",
-    "sec-ch-ua-mobile": "?0",
-    "sec-ch-ua-platform": "'Windows'",
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-origin",
-    "priority": "u=1, i"
+   "비공개"
 }
   
