@@ -32,11 +32,11 @@ def get_complex_info(complex_no, session, max_retries=3):
     
     while retry_count < max_retries:
         try:
-            complex_info_url = f'https://new.land.naver.com/api/complexes/{complex_no}'
+            complex_info_url = f'비공개{complex_no}'
             print(f" 단지 정보 요청: {complex_info_url}")
             
             complex_headers = HEADERS.copy()
-            complex_headers['referer'] = f'https://new.land.naver.com/complexes/{complex_no}'
+            complex_headers['referer'] = f'비공개{complex_no}'
             complex_headers['accept'] = '*/*'
             
             complex_response = session.get(complex_info_url, headers=complex_headers, cookies=COOKIES)
@@ -71,11 +71,11 @@ def get_article_details(article_no, session, max_retries=3):
     
     while retry_count < max_retries:
         try:
-            article_url = f'https://new.land.naver.com/api/articles/{article_no}?complexNo='
+            article_url = f'비공개{article_no}?complexNo='
             print(f" 매물 상세 정보 요청: {article_url}")
             
             article_headers = HEADERS.copy()
-            article_headers['referer'] = f'https://new.land.naver.com/complexes?ms=0,0,0&a=APT:ABYG:JGC:PRE&b=A1:B1:B2&e=RETAIL&f=5000&articleNo={article_no}'
+            article_headers['referer'] = f'비공개{article_no}'
             
             response = session.get(article_url, headers=article_headers, cookies=COOKIES)
             if response.status_code == 200:
@@ -128,7 +128,7 @@ def get_articles_by_complex(complex_no, max_retries=3):
                 continue
             
             # 2. 단지 페이지 접근
-            complex_page_url = f'https://new.land.naver.com/complexes/{complex_no}'
+            complex_page_url = f'비공개{complex_no}'
             print(f" 단지 페이지 접근: {complex_page_url}")
             
             page_headers = HEADERS.copy()
@@ -154,12 +154,12 @@ def get_articles_by_complex(complex_no, max_retries=3):
             
             # 4. 매물 목록 API 호출 (모든 페이지)
             while True:
-                articles_url = f'https://new.land.naver.com/api/articles/complex/{complex_no}?realEstateType=APT&tradeType=A1&page={page}&type=list&order=rank'
+                articles_url = f'비공개{complex_no}?비공개'
                 print(f" 매물 정보 요청 (페이지 {page}): {articles_url}")
                 
                 # 매물 API 요청 시 필요한 헤더 설정
                 dynamic_headers = HEADERS.copy()
-                dynamic_headers['referer'] = f'https://new.land.naver.com/complexes/{complex_no}?ms=37.5575,126.9083,16&a=APT:ABYG:JGC:PRE&b=A1&e=RETAIL&g=114400&f=114400'
+                dynamic_headers['referer'] = f'비공개{complex_no}?비공개'
                 dynamic_headers['sec-fetch-site'] = 'same-origin'
                 dynamic_headers['sec-fetch-mode'] = 'cors'
                 dynamic_headers['sec-fetch-dest'] = 'empty'
