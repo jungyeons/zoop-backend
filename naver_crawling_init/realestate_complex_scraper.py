@@ -16,7 +16,7 @@ cookies = {
 def get_complex_list_by_dong(city='서울특별시', district='마포구'):
     """지역구의 단지 목록을 가져오는 함수"""
     # 마포구의 cortarNo: 1144000000
-    url = f"https://new.land.naver.com/api/regions/list?cortarNo=1144000000"
+    url = f"비공개cortarNo=1144000000"
     
     try:
         # 먼저 지역 정보 가져오기
@@ -43,7 +43,7 @@ def get_complex_list_by_dong(city='서울특별시', district='마포구'):
             dong_name = dong['cortarName']
             print(f"\n {dong_name} 단지 목록 가져오는 중...")
             
-            complex_url = f"https://new.land.naver.com/api/regions/complexes?cortarNo={dong_no}&realEstateType=APT&order=rank"
+            complex_url = f"비공개{dong_no}&비공개"
             complex_res = requests.get(complex_url, headers=headers, cookies=cookies)
             complex_res.raise_for_status()
             data = complex_res.json()
@@ -106,8 +106,8 @@ def crawl_complex(complex_no, max_pages=20):
     while page <= total_pages:
         # 단순화된 URL 사용 (필수 파라미터만 포함)
         url = (
-            f'https://new.land.naver.com/api/articles/complex/{complex_no}'
-            f'?realEstateType=APT&tradeType=A1&page={page}'
+            f'비공개{complex_no}'
+            f'?realEstateType=비공개&tradeType=비공개&page={page}'
             f'&complexNo={complex_no}&type=list&order=rank'
         )
         
@@ -118,17 +118,17 @@ def crawl_complex(complex_no, max_pages=20):
             session = requests.Session()
             
             # 단지 페이지 먼저 접근 (세션 생성)
-            complex_page_url = f'https://new.land.naver.com/complexes/{complex_no}'
+            complex_page_url = f'비공개{complex_no}'
             session.get(complex_page_url, headers=headers, cookies=cookies)
             
             # Authorization 토큰 가져오기
-            auth_url = f'https://new.land.naver.com/api/pre-sale/{complex_no}'
+            auth_url = f'비공개{complex_no}'
             auth_response = session.get(auth_url, headers=headers, cookies=cookies)
             auth_token = auth_response.headers.get('authorization', '')
             
             # Referer 헤더를 해당 단지로 변경 (더 구체적인 URL 사용)
             dynamic_headers = headers.copy()
-            dynamic_headers['referer'] = f'https://new.land.naver.com/complexes/{complex_no}?ms=37.544611,127.0890286,16&a=APT:ABYG:JGC:PRE&b=A1&e=RETAIL&g=110000'
+            dynamic_headers['referer'] = f'비공개{complex_no}?비공개'
             if auth_token:
                 dynamic_headers['authorization'] = auth_token
             
