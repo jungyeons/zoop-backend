@@ -1,6 +1,5 @@
 # zoop-backend
-기업연계 프로젝트
+AI 부동산 매물 추천 플랫폼 - 기업연계 프로젝트
 
 
-# 팀 협업 노션 페이지
-https://www.notion.so/3-1eccc686750c805b83c6ce4cbe66d921?source=copy_link
+<img width="1195" height="677" alt="image" src="https://github.com/user-attachments/assets/980faac0-3d47-4fbe-b0c5-39352a8e5091" />
